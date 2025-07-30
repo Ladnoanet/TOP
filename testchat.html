@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blob with Transparent Background</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: transparent; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+  <script>
+    // Сцена
+    const scene = new THREE.Scene();
+
+    // Камера
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.z = 5;
+
+    // Рендерер с прозрачностью
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Геометрия (blob можно заменить на свою кастомную)
+    const geometry = new THREE.IcosahedronGeometry(1, 6); // Подходит для blob-like форм
+
+    // Материал
+    const material = new THREE.MeshStandardMaterial({
+      color: 0x9019ff,
+      metalness: 1,
+      roughness: 0.5,
+      transparent: true,
+      opacity: 1,
+      clearcoat: 1
+    });
+
+    // Mesh
+    const blob = new THREE.Mesh(geometry, material);
+    scene.add(blob);
+
+    // Свет
+    const light1 = new THREE.DirectionalLight(0xffffff, 1);
+    light1.position.set(5, 5, 5);
+    scene.add(light1);
+
+    const light2 = new THREE.AmbientLight(0x404040); // Мягкий свет
+    scene.add(light2);
+
+    // Анимация (без вращения, если не хочешь — просто оставь пусто)
+    function animate() {
+      requestAnimationFrame(animate);
+      // blob.rotation.y += 0.01; // убрать если не нужен поворот
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Ресайз
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>

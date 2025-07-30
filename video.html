@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТОП</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Jost:400,400&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    @font-face {
+    font-family: 'font';
+    src: url('font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'fontbold';
+        src: url('font-b.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+    
+    img[src$=".svg"] {
+      filter: invert(1) brightness(2);
+    }
+
+    body, input, .zaregaza {
+    font-family: 'font', Arial, Helvetica, sans-serif;
+    }
+
+    h1, strong, b {
+        font-family: 'fontbold', Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #09090B;
+      color: white;
+      padding-top: 60px;
+    }
+
+    header {
+      background-color: #17171bcb;
+      backdrop-filter: blur(5px);
+      position: fixed;
+      height: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding-left: 20px; padding-right: 20px;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1.5px solid #1E1E22;
+    }
+
+    header img {
+      height: 25px;
+    }
+
+    .buttons {
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .buttons img {
+      height: 25px;
+      filter: invert(1) brightness(2);
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+        footer {
+          background-color: #1E1E22;
+          position: fixed;
+          height: 60px;
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          box-sizing: border-box;
+          bottom: 0;
+          z-index: 100;
+          border-top: 1.5px solid #1A1A1D;
+        }
+
+        footer img[src$=".svg"] {
+      filter: invert(1) brightness(2);
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-family: Helvetica, sans-serif;
+    }
+
+    .slider {
+        height: calc(100vh - 60px);
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        scrollbar-width: none; 
+        overflow-x: hidden;
+        box-shadow: 0 4px 24px #0005;
+        overscroll-behavior-y: contain;
+        }
+
+        .slide {
+        min-height: 100%;
+        width: 100vw;
+        scroll-snap-align: start;
+        transition: background 1s cubic-bezier(0.4,0,0.2,1), box-shadow 1s cubic-bezier(0.4,0,0.2,1);
+        margin-bottom: 12px;
+        box-shadow: 0 2px 12px #0003;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        box-sizing: border-box;
+        padding: 20px;
+        }
+        .slider::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        background: transparent;
+        }
+
+        body {
+        overflow: hidden;
+        }
+
+        .acc {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .like {
+            padding: 10px;
+            background-color: #ffffff3c;
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+        }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="ТОП ВИДЕО.png" alt="ЛОГОТОП">
+    <div class="buttons">
+      <a href="main.html"><img style="margin-right: 5px;" src="back.svg" alt="назад"> Назад</a>
+    </div>
+  </header>
+
+  <div class="slider">
+    <div class="slide" style="background: url('1.png') center center / cover no-repeat;"><div class="acc"><div class="ak"><p style="font-size: 20px; margin-bottom: 5px;">Иван</p><p style="color: #D4D4D8;">15 Просмотров</p></div><a class="like" href="#"><img src="like.svg" alt="Лайк"></a></div></div>
+    <div class="slide" style="background: url('2.png') center center / cover no-repeat;"><div class="acc"><div class="ak"><p style="font-size: 20px; margin-bottom: 5px;">Мария</p><p style="color: #D4D4D8;">120 Просмотров</p></div><a class="like" href="#"><img src="like.svg" alt="Лайк"></a></div></div>
+    <div class="slide" style="background: url('3.png') center center / cover no-repeat;"><div class="acc"><div class="ak"><p style="font-size: 20px; margin-bottom: 5px;">Дмитрий</p><p style="color: #D4D4D8;">47 Просмотров</p></div><a class="like" href="#"><img src="like.svg" alt="Лайк"></a></div></div>
+    <div class="slide" style="background: url('4.png') center center / cover no-repeat;"><div class="acc"><div class="ak"><p style="font-size: 20px; margin-bottom: 5px;">Ольга</p><p style="color: #D4D4D8;">98 Просмотров</p></div><a class="like" href="#"><img src="like.svg" alt="Лайк"></a></div></div>
+    <div class="slide" style="background: url('5.png') center center / cover no-repeat;"><div class="acc"><div class="ak"><p style="font-size: 20px; margin-bottom: 5px;">Екатерина</p><p style="color: #D4D4D8;">33 Просмотров</p></div><a class="like" href="#"><img src="like.svg" alt="Лайк"></a></div></div>
+    <div class="slide" style="background: url('6.png') center center / cover no-repeat;"><div class="acc"><div class="ak"><p style="font-size: 20px; margin-bottom: 5px;">Сергей</p><p style="color: #D4D4D8;">142 Просмотров</p></div><a class="like" href="#"><img src="like.svg" alt="Лайк"></a></div></div>
+    <div class="slide" style="background: url('7.png') center center / cover no-repeat;"><div class="acc"><div class="ak"><p style="font-size: 20px; margin-bottom: 5px;">Антон</p><p style="color: #D4D4D8;">56 Просмотров</p></div><a class="like" href="#"><img src="like.svg" alt="Лайк"></a></div></div>
+    <br>
+    <center><p style="font-family: 'font';">Ошибка загрузки</p></center>
+    <br>
+    <script>
+    document.querySelectorAll('.like').forEach(function(likeBtn) {
+        likeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('liked');
+            if (this.classList.contains('liked')) {
+                this.style.backgroundColor = '#ff00003c';
+            } else {
+                this.style.backgroundColor = '#ffffff3c';
+            }
+        });
+    });
+    </script>
+  </div>
+</body>
+</html>

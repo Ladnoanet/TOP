@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТОП</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Jost:400,400&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    @font-face {
+    font-family: 'font';
+    src: url('font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'fontbold';
+        src: url('font-b.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+    
+    img[src$=".svg"] {
+      filter: invert(1) brightness(2);
+    }
+
+    body, input, .zaregaza {
+    font-family: 'font', Arial, Helvetica, sans-serif;
+    }
+
+    h1, strong, b {
+        font-family: 'fontbold', Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #09090B;
+      color: white;
+      padding-top: 75px;
+    }
+
+    header {
+      background-color: #17171bcb;
+      backdrop-filter: blur(5px);
+      position: fixed;
+      height: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding-left: 20px; padding-right: 20px;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1.5px solid #1E1E22;
+    }
+
+    header img {
+      height: 25px;
+    }
+
+    .buttons {
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .buttons img {
+      height: 25px;
+      filter: invert(1) brightness(2);
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+        footer {
+          background-color: #1E1E22;
+          position: fixed;
+          height: 60px;
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          box-sizing: border-box;
+          bottom: 0;
+          z-index: 100;
+          border-top: 1.5px solid #1A1A1D;
+        }
+
+        footer img[src$=".svg"] {
+      filter: invert(1) brightness(2);
+    }
+
+    .chater {
+        margin: auto;
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .chaterIMG {
+        width: 45px;
+        height: 45px;
+      background-color: #9019ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin-right: 15px;
+      font-size: 16px;
+      font-family: 'fontbold', Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+        }
+        .chaterIMG p {
+      margin: 0;
+      line-height: 1;
+      margin-top: 2.5px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            height: 50px;
+        }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="chati.png" alt="ЛОГОТОП">
+    <div class="buttons">
+      <a href="poisk.html"><img src="poisk.svg" alt="поиск"></a>
+      <a href="notification.html"><img src="notification.svg" alt="уведомы"></a>
+    </div>
+  </header>
+
+  <h2 style="width: 90%; margin: auto; font-family: 'font'; font-weight: 500; font-size: 25px; margin-bottom: 10px;">Доступные чаты:</h2>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <div class="chater">
+    <div class="about">
+       <div class="chaterIMG">
+        <p>АП</p>
+       </div>
+       <div class="bbut">
+        <p style="font-size: 22px; margin-bottom: -2.5px;">Анна Петрова</p>
+        <p style="color: #A1A1AA;">Активный пользователь</p>
+       </div>
+    </div> 
+  </div>
+
+  <br><br><br>
+
+  <footer>
+    <a href="main.html"><img src="home.svg" alt="дом"></a>
+    <a href="video.html"><img src="video.svg" alt="дом"></a>
+    <a href="chat.html"><img src="chat.svg" alt="дом"></a>
+    <a href="profile.html"><img src="user.svg" alt="дом"></a>
+  </footer>
+
+</body>
+</html>
