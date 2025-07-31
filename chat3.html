@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ТОП</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Jost:400,400&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    @font-face {
+      font-family: 'font';
+      src: url('font.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'fontbold';
+      src: url('font-b.ttf') format('truetype');
+    }
+
+    body, input {
+      font-family: 'font', Arial, Helvetica, sans-serif;
+    }
+
+    h1, strong, b {
+      font-family: 'fontbold', Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #09090B;
+      color: white;
+      padding-top: 60px;
+    }
+
+    header {
+      background-color: #17171bcb;
+      backdrop-filter: blur(5px);
+      position: fixed;
+      height: 60px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      padding: 0 10px;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1.5px solid #1E1E22;
+    }
+
+    header img {
+      height: 25px;
+    }
+
+    .chaterIMG {
+      width: 38px;
+      height: 38px;
+      background-color: #9019ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin-right: 10px;
+      font-size: 16px;
+      font-family: 'fontbold', Arial, Helvetica, sans-serif;
+    }
+
+    .chaterIMG p {
+      margin: 0;
+      line-height: 1;
+      margin-top: 2.5px;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .chat-messages {
+      width: 100%;
+      height: calc(100vh - 125px);
+      padding: 10px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sender {
+      align-self: flex-end;
+      background-color: #9019ff;
+      border-radius: 20px 20px 5px 20px;
+      padding: 10px 15px;
+      margin: 10px;
+      margin-bottom: 0px;
+      max-width: 80%;
+      font-size: 22px;
+      word-break: break-word;
+    }
+
+    .senderm {
+      align-self: flex-start;
+      background-color: #27272A;
+      border-radius: 5px 20px 20px;
+      padding: 10px 15px;
+      margin: 10px;
+      margin-bottom: 0px;
+      max-width: 80%;
+      font-size: 22px;
+      word-break: break-word;
+    }
+
+    footer {
+      background-color: #1E1E22;
+      position: fixed;
+      height: 65px;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      bottom: 0;
+      z-index: 100;
+      border-top: 1.5px solid #1A1A1D;
+    }
+
+    input {
+      background-color: #27272A;
+      color: white;
+      border: none;
+      height: 45px;
+      width: calc(100% - 45px - 40px);
+      border-radius: 15px;
+      font-size: 25px;
+      padding: 0 20px;
+      outline: none;
+    }
+
+    button {
+      border: none;
+      background-color: #9019ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 45px;
+      width: 45px;
+      border-radius: 15px;
+    }
+
+    button img {
+      height: 30px;
+      width: 30px;
+    }
+
+    img[src$=".svg"] {
+      filter: invert(1) brightness(2);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a style="display: flex; align-items: center; justify-content: center;" href="chat.html">
+      <img src="back.svg" alt="назад">
+    </a>
+    <div style="background: url('besopas.png') center center / cover no-repeat; margin-left: 12px;" class="chaterIMG"></div>
+    <div>
+      <h2 style="font-weight: 500; margin-bottom: -2px; font-size: 22.2px;">Безопасность</h2>
+      <p style="color: #A1A1AA;">Бот</p>  
+    </div>
+  </header>
+  <div class="chat-messages">
+  </div>
+
+  <footer>
+    <input type="text" placeholder="Сообщение..." />
+    <button><img src="send.svg" alt="отправить"></button>
+  </footer>
+
+  <script>
+    const sendButton = document.querySelector("footer button");
+    const inputField = document.querySelector("footer input");
+    const chatContainer = document.querySelector(".chat-messages");
+
+    // Загружаем историю из localStorage
+    const storedMessages = JSON.parse(localStorage.getItem("BezMessages")) || [];
+
+    function renderMessages() {
+      chatContainer.innerHTML = "";
+      const messageElement = document.createElement("div");
+      messageElement.className = "senderm";
+      messageElement.innerHTML = `<p>Ваш код входа в  ТОП: 48652. Никому его не сообщайте!</p>`;
+      chatContainer.appendChild(messageElement);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      storedMessages.forEach((msg) => {
+        const messageElement = document.createElement("div");
+        messageElement.className = "sender";
+        messageElement.innerHTML = `<p>${msg}</p>`;
+        chatContainer.appendChild(messageElement);
+      });
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    function sendMessage() {
+      const messageText = inputField.value.trim();
+      if (messageText === "") return;
+
+      // Добавляем в localStorage
+      storedMessages.push(messageText);
+      localStorage.setItem("BezMessages", JSON.stringify(storedMessages));
+
+      // Добавляем на страницу
+      const messageElement = document.createElement("div");
+      messageElement.className = "sender";
+      messageElement.innerHTML = `<p>${messageText}</p>`;
+      chatContainer.appendChild(messageElement);
+
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      inputField.value = "";
+    }
+
+    sendButton.addEventListener("click", sendMessage);
+    inputField.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        sendMessage();
+      }
+    });
+
+    // Отображаем сохранённую переписку при загрузке
+    renderMessages();
+  </script>
+
+</body>
+</html>
