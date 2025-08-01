@@ -338,7 +338,7 @@ function poprob() {
   // 1. Сообщение от пользователя
   const userMessage = document.createElement("div");
   userMessage.className = "sender";
-  userMessage.innerHTML = `<p>Проблема с аккаунтом</p>`;
+  userMessage.innerHTML = `<p>Проблема с постами</p>`;
   chatContainer.appendChild(userMessage);
   chatContainer.scrollTop = chatContainer.scrollHeight;
 
@@ -352,6 +352,69 @@ function poprob() {
   }, 2000);
 }
 
+function inprob() {
+  actionsPanel.classList.remove("slide-up");
+  actionsPanel.classList.add("slide-down");
+
+  actionsPanel.addEventListener("animationend", function hideAfterDown(e) {
+    if (e.animationName === "slide-down") {
+      actionsPanel.style.display = "none";
+      actionsPanel.removeEventListener("animationend", hideAfterDown);
+    }
+  });
+
+  isOpen = false;
+
+  const chatContainer = document.querySelector(".chat-messages");
+
+  // 1. Сообщение от пользователя
+  const userMessage = document.createElement("div");
+  userMessage.className = "sender";
+  userMessage.innerHTML = `<p>Проблема с интернетом</p>`;
+  chatContainer.appendChild(userMessage);
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+
+  // 2. Автоматический ответ
+  setTimeout(() => {
+    const autoReply = document.createElement("div");
+    autoReply.className = "senderm";
+    autoReply.innerHTML = `<p>Ваша заявка принята и отправлена на рассмотрение</p>`;
+    chatContainer.appendChild(autoReply);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }, 2000);
+}
+
+function poprob() {
+  actionsPanel.classList.remove("slide-up");
+  actionsPanel.classList.add("slide-down");
+
+  actionsPanel.addEventListener("animationend", function hideAfterDown(e) {
+    if (e.animationName === "slide-down") {
+      actionsPanel.style.display = "none";
+      actionsPanel.removeEventListener("animationend", hideAfterDown);
+    }
+  });
+
+  isOpen = false;
+
+  const chatContainer = document.querySelector(".chat-messages");
+
+  // 1. Сообщение от пользователя
+  const userMessage = document.createElement("div");
+  userMessage.className = "sender";
+  userMessage.innerHTML = `<p>Проблема с постами</p>`;
+  chatContainer.appendChild(userMessage);
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+
+  // 2. Автоматический ответ
+  setTimeout(() => {
+    const autoReply = document.createElement("div");
+    autoReply.className = "senderm";
+    autoReply.innerHTML = `<p>Ваша заявка принята и отправлена на рассмотрение</p>`;
+    chatContainer.appendChild(autoReply);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }, 2000);
+}
 
 </script>
 
