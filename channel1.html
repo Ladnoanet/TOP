@@ -110,7 +110,7 @@
       padding: 10px 15px;
       margin: 10px;
       margin-bottom: 0px;
-      max-width: 80%;
+      max-width: 100%;
       font-size: 22px;
       word-break: break-word;
     }
@@ -167,68 +167,31 @@
     <a style="display: flex; align-items: center; justify-content: center;" href="chat.html">
       <img src="back.svg" alt="назад">
     </a>
-    <div style="background: url('izbran.png') center center / cover no-repeat; margin-left: 12px;" class="chaterIMG"></div>
+    <div style="background: url('logo.png') center center / cover no-repeat; margin-left: 12px;" class="chaterIMG"></div>
     <div>
-      <h2 style="font-weight: 500; margin-bottom: -2px; font-size: 22.2px;">Избранное</h2>
-      <p style="color: #A1A1AA;">Это вы</p>  
+      <h2 style="font-weight: 500; margin-bottom: -2px; font-size: 22.2px;">Канал ТОП!</h2>
+      <p style="color: #A1A1AA;">Канал</p>  
     </div>
   </header>
-
-  <div class="chat-messages"></div>
+  <div class="chat-messages">
+    <div class="senderm">
+        <p>Платформа "ТОП" открыта для всех! 🎉 Присоединяйтесь к новому пространству для творчества, общения и развития. Откройте для себя возможности, которые мы предлагаем! 🚀 <span style="color: #9019ff;">#ТОП #Открытие #НоваяПлатформа</span></p>
+        
+    </div>
+    <div class="senderm">
+        <p>Добавление ИИ-чата! Встречайте TopAI! Теперь на платформе "ТОП" доступен ИИ-чат! Задавайте вопросы, получайте креативные идеи и пользуйтесь помощью в любое время. 💬 <span style="color: #9019ff;">#ТОП #ИИ #Чат #TopAI</span></p>
+        
+    </div>
+    <div class="senderm">
+        <p>Возможность создания канала! 📢 Создайте свой канал на "ТОП"! 📢 Делитесь своими мыслями, идеями и творчеством с аудиторией. Легко и удобно! ✍️ <span style="color: #9019ff;">#ТОП #Каналы #Творчество #Возможности</span></p>
+        
+    </div>
+  </div>
 
   <footer>
-    <input type="text" placeholder="Сообщение..." />
-    <button><img src="send.svg" alt="отправить"></button>
+    <h2 style="font-weight: 500;">Вы подписаны</h2>
   </footer>
 
-  <script>
-    const sendButton = document.querySelector("footer button");
-    const inputField = document.querySelector("footer input");
-    const chatContainer = document.querySelector(".chat-messages");
-
-    // Загружаем историю из localStorage
-    const storedMessages = JSON.parse(localStorage.getItem("favoriteMessages")) || [];
-
-    function renderMessages() {
-      chatContainer.innerHTML = "";
-      storedMessages.forEach((msg) => {
-        const messageElement = document.createElement("div");
-        messageElement.className = "sender";
-        messageElement.innerHTML = `<p>${msg}</p>`;
-        chatContainer.appendChild(messageElement);
-      });
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-    }
-
-    function sendMessage() {
-      const messageText = inputField.value.trim();
-      if (messageText === "") return;
-
-      // Добавляем в localStorage
-      storedMessages.push(messageText);
-      localStorage.setItem("favoriteMessages", JSON.stringify(storedMessages));
-
-      // Добавляем на страницу
-      const messageElement = document.createElement("div");
-      messageElement.className = "sender";
-      messageElement.innerHTML = `<p>${messageText}</p>`;
-      chatContainer.appendChild(messageElement);
-
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-      inputField.value = "";
-    }
-
-    sendButton.addEventListener("click", sendMessage);
-    inputField.addEventListener("keydown", function(event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        sendMessage();
-      }
-    });
-
-    // Отображаем сохранённую переписку при загрузке
-    renderMessages();
-  </script>
 
 </body>
 </html>

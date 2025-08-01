@@ -43,6 +43,7 @@
       background-color: #09090B;
       color: white;
       padding-top: 75px;
+      text-align: center;
     }
 
     header {
@@ -170,6 +171,23 @@
         footer img[src$=".svg"] {
       filter: invert(1) brightness(2);
     }
+
+    input {
+        text-align: left;
+        height: 40px;
+        width: 90%;
+        margin-top: 15px;
+        background-color: #18181B;
+        border: 0;
+        border-radius: 16px;
+        outline: none;
+        color: white;
+        font-family: 'font', Arial, Helvetica, sans-serif;
+        font-size: 17px;
+        margin: auto;
+        box-sizing: border-box;
+        padding: 15px;
+    }
   </style>
 </head>
 <body>
@@ -181,27 +199,10 @@
     </div>
   </header>
 
-  <div data-id="post-1" class="post">
-    <div class="user">
-      <div class="usa">
-        <div class="ava">
-          <p>ТП</p> 
-        </div>
-        <p>ТОП!</p>
-      </div>
-      <p class="time">1 августа, 2025, 15:00</p>
-    </div>
-    <p style="margin-top: 20px; margin-bottom: 10px; font-size: 20px;">Добро Пожаловать в ТОП!</p>
-    <img style="width: 100%; border-radius: 10px;" src="post top.png" alt="Картинка">
-    <div class="likes">
-      <div class="like">
-        <img src="like.svg" alt="лайки"><p>23</p>
-      </div>
-      <div class="repost">
-        <img src="repost.svg" alt="репост"><p>4</p>
-      </div>
-    </div>
-  </div>
+  <input type="text">
+
+<br><br><br><br><br><br><br><br>
+<center><h1 style="font-weight: 100; font-family: 'font'; margin: 0; width: 90%;">Ничего не найдено</h1></center>
 
   <br><br><br>
 
@@ -211,50 +212,6 @@
     <a href="chat.html"><img src="chat.svg" alt="дом"></a>
     <a href="profile.html"><img src="user.svg" alt="дом"></a>
   </footer>
-
-  <script>
-  const posts = document.querySelectorAll('.post');
-
-  posts.forEach((post, index) => {
-    const postId = post.dataset.id;
-
-    const likeEl = post.querySelector('.like');
-    const repostEl = post.querySelector('.repost');
-
-    const likeCountEl = likeEl.querySelector('p');
-    const repostCountEl = repostEl.querySelector('p');
-
-    const initialLikeCount = parseInt(likeCountEl.textContent, 10);
-    const initialRepostCount = parseInt(repostCountEl.textContent, 10);
-
-    let liked = localStorage.getItem(postId + '-liked') === 'true';
-    let reposted = localStorage.getItem(postId + '-reposted') === 'true';
-
-    function update() {
-      likeCountEl.textContent = initialLikeCount + (liked ? 1 : 0);
-      repostCountEl.textContent = initialRepostCount + (reposted ? 1 : 0);
-
-      likeEl.querySelector('img').style.filter = liked ? 'invert(46%) sepia(87%) saturate(6235%) hue-rotate(316deg) brightness(104%) contrast(112%)' : '';
-      repostEl.querySelector('img').style.filter = reposted ? 'invert(46%) sepia(87%) saturate(6235%) hue-rotate(316deg) brightness(104%) contrast(112%)' : '';
-    }
-
-    update();
-
-    likeEl.addEventListener('click', () => {
-      liked = !liked;
-      localStorage.setItem(postId + '-liked', liked);
-      update();
-    });
-
-    repostEl.addEventListener('click', () => {
-      reposted = !reposted;
-      localStorage.setItem(postId + '-reposted', reposted);
-      update();
-    });
-  });
-</script>
-
-
 
 </body>
 </html>

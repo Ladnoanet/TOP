@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТОП</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Jost:400,400&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    @font-face {
+    font-family: 'font';
+    src: url('font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'fontbold';
+        src: url('font-b.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+    
+    img[src$=".svg"] {
+      filter: invert(1) brightness(2);
+    }
+
+    body, input, .zaregaza {
+    font-family: 'font', Arial, Helvetica, sans-serif;
+    }
+
+    h1, strong, b {
+        font-family: 'fontbold', Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #09090B;
+      color: white;
+      padding-top: 65px;
+    }
+
+    header {
+      background-color: #17171bcb;
+      backdrop-filter: blur(5px);
+      position: fixed;
+      height: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding-left: 20px; padding-right: 20px;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1.5px solid #1E1E22;
+    }
+
+    header img {
+      height: 25px;
+    }
+
+    .buttons {
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .buttons img {
+      height: 25px;
+      filter: invert(1) brightness(2);
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+        footer {
+          background-color: #1E1E22;
+          position: fixed;
+          height: 60px;
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          box-sizing: border-box;
+          bottom: 0;
+          z-index: 100;
+          border-top: 1.5px solid #1A1A1D;
+        }
+
+        footer img[src$=".svg"] {
+      filter: invert(1) brightness(2);
+    }
+
+    .avatar {
+        margin: auto;
+        width: 90px;
+        height: 90px;
+      background-color: #9019ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 16px;
+      font-family: 'fontbold', Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+        }
+        .avatar span {
+      margin: 0;
+      line-height: 2;
+      margin-top: 10px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-size: 30px;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            height: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .redact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #27272a;
+            width: 90%;
+            height: 45px;
+            margin-top: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        a.dei {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #1A1A1D;
+            width: 90%;
+            height: 45px;
+            padding: 0 10px;
+            gap: 10px;
+            box-sizing: border-box;
+            line-height: normal;
+            font-family: sans-serif;
+            color: white;
+            text-decoration: none;
+        }
+
+        a.dei img {
+            height: 25px;
+        }
+
+        .name {
+            text-align: left;
+            height: 40px;
+            width: 90%;
+            margin-top: 15px;
+            background-color: #18181B;
+            border: 0;
+            border-radius: 16px;
+            outline: none;
+            color: white;
+            font-family: 'font', Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 15px;
+        }
+
+        .uss {
+            text-align: left;
+            height: 40px;
+            width: 90%;
+            margin-top: 15px;
+            background-color: #18181B;
+            border: 0;
+            border-radius: 16px;
+            outline: none;
+            color: white;
+            font-family: 'font', Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .q {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+            margin-top: 15px;
+        }
+
+        .q a {
+            background-color: #9019ff;
+            width: 47%; height: 40px;
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 17px;
+        }
+
+        .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background-color: #9019ff;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+.dopa {
+    width: 90%;
+    background-color: #1E1E22;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 16px;
+    margin-bottom: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="profil.png" alt="ЛОГОТОП">
+    <div class="buttons">
+    </div>
+  </header>
+
+  <h2 style="font-family: 'font'; font-weight: 500; margin: 15px; margin-bottom: 5px;">Юзернейм:</h2>
+  <center><input class="name" id="username" type="text" placeholder="Ваше новое имя..."></center>
+  <br>
+  <h2 style="font-family: 'font'; font-weight: 500; margin: 15px; margin-bottom: 5px;">Имя пользователя:</h2>
+  <center><div class="uss"><span id="userneme" style="color: #A1A1AA;">@username</span><i style="font-size: 10px; color: #00FF95;" class="fas fa-check"></i></div></center>
+  <div class="q">
+    <a id="registerBtn" href="">Применить</a>
+    <a style="background-color: #27272a;" href="profile.html">Отменить</a>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const username = localStorage.getItem('usernameTOP');
+    const aaa = document.getElementById("userneme");
+
+    if (username && aaa) {
+      aaa.textContent = "@" + username;
+    }
+  });
+
+  document.getElementById('registerBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            if (username) {
+                localStorage.setItem('usernameTOP', username);
+                window.location.href = 'profile.html';
+            } else {
+                alert('Думаешь самый умный?');
+            }
+        });
+</script>
+<p style="font-family: 'font'; font-weight: 500; margin: 15px; margin-top: 20px; margin-bottom: 10px; color: #A1A1AA;">Дополнительно</p>
+
+<div class="dopa">
+    <div style="width: 75%;" class="text">
+        <p style="font-size: 18px; margin-bottom: 5px;">Приватный Аккаунт</p>
+        <p>Другие пользователи не будут видить ваш аккаунт</p>
+    </div>
+    <label class="switch">
+    <input type="checkbox" checked>
+    <span class="slider"></span>
+    </label>
+</div>
+<a href="konfedi.html">
+<div class="dopa">
+    <div style="width: 75%;" class="text">
+        <p style="font-size: 18px; margin-bottom: 5px;">Конфидециальность</p>
+        <p>Кто может найти вас и связаться с вами</p>
+    </div>
+    <img style="rotate: 180deg;" src="back.svg" alt="назад">
+</div>    
+</a>
+<a id="removeBtn" href="#">
+<div style="background-color: rgb(95, 0, 0);" class="dopa">
+    <div style="width: 75%;" class="text">
+        <p style="font-size: 18px; margin-bottom: 5px;">Удалить аккаунт</p>
+        <p>Удалить навсегда все данные о вас</p>
+    </div>
+    <img style="rotate: 180deg;" src="back.svg" alt="назад">
+</div>    
+</a>
+<script>
+    document.getElementById('removeBtn').addEventListener('click', function() {
+            localStorage.removeItem('usernameTOP');
+            localStorage.removeItem('favoriteMessages');
+            window.location.href = 'index.html';
+        });
+</script>
+
+  <br><br><br><br>
+
+  <footer>
+    <a href="main.html"><img src="home.svg" alt="дом"></a>
+    <a href="video.html"><img src="video.svg" alt="дом"></a>
+    <a href="chat.html"><img src="chat.svg" alt="дом"></a>
+    <a href="profile.html"><img src="user.svg" alt="дом"></a>
+  </footer>
+
+
+</body>
+</html>

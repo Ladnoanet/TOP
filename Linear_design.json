@@ -1,0 +1,22 @@
+{
+  "capsules": [
+    { "blk": "Fz8uMDE=" },
+    { "blk": "aGFja21l" },
+    { "blk": "=cmRldlarFza" }
+  ],
+  "secrets_bin": [
+    { "val": "c2VyMTIz" },
+    { "val": "=M1R2TmV1" },
+    { "val": "OV8zYWY=" }
+  ],
+  "HEXLINE$": [
+    { "chunk": "Pf1eUzMnJD==" },
+    { "chunk": "UkVTVF9BUElfS0VZ" },
+    { "chunk": "=RDFyZ3Z3ZzM=" }
+  ],
+  "ghost_trace": [
+    { "entry": "==93mzBG" },
+    { "entry": "=TTp==xQ9" },
+    { "entry": "ZkFwMmJs" }
+  ]
+}

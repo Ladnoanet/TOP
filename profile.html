@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТОП</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Jost:400,400&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    @font-face {
+    font-family: 'font';
+    src: url('font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'fontbold';
+        src: url('font-b.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+    
+    img[src$=".svg"] {
+      filter: invert(1) brightness(2);
+    }
+
+    body, input, .zaregaza {
+    font-family: 'font', Arial, Helvetica, sans-serif;
+    }
+
+    h1, strong, b {
+        font-family: 'fontbold', Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #09090B;
+      color: white;
+      padding-top: 75px;
+    }
+
+    header {
+      background-color: #17171bcb;
+      backdrop-filter: blur(5px);
+      position: fixed;
+      height: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding-left: 20px; padding-right: 20px;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1.5px solid #1E1E22;
+    }
+
+    header img {
+      height: 25px;
+    }
+
+    .buttons {
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .buttons img {
+      height: 25px;
+      filter: invert(1) brightness(2);
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+        footer {
+          background-color: #1E1E22;
+          position: fixed;
+          height: 60px;
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          box-sizing: border-box;
+          bottom: 0;
+          z-index: 100;
+          border-top: 1.5px solid #1A1A1D;
+        }
+
+        footer img[src$=".svg"] {
+      filter: invert(1) brightness(2);
+    }
+
+    .avatar {
+        margin: auto;
+        width: 90px;
+        height: 90px;
+      background-color: #9019ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 16px;
+      font-family: 'fontbold', Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+        }
+        .avatar span {
+      margin: 0;
+      line-height: 2;
+      margin-top: 10px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-size: 30px;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            height: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .redact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #27272a;
+            width: 90%;
+            height: 45px;
+            margin-top: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        a.dei {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #1A1A1D;
+            width: 90%;
+            height: 45px;
+            padding: 0 10px;
+            gap: 10px;
+            box-sizing: border-box;
+            line-height: normal;
+            font-family: sans-serif;
+            color: white;
+            text-decoration: none;
+        }
+
+        a.dei img {
+            height: 25px;
+        }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="profil.png" alt="ЛОГОТОП">
+    <div class="buttons">
+    </div>
+  </header>
+
+  <div class="avatar">
+    <span>ВЫ</span>
+  </div>
+  <center>
+    <h1 style="font-weight: 100; font-family: 'font'; margin-top: 10px;">НИКНЕЙМ</h2>
+    <p style="font-size: 20px; color: #A1A1AA;">@username</p>
+    <a class="redact" href="redact.html">Редактировать профиль</a>
+
+    <a style="border-radius: 15px 15px 0 0; margin-bottom: 2.5px;" class="dei" href="https://tally.so/r/wz5kEa"><img src="video.svg"> Создать пост</a>
+    <a style="margin-bottom: 2.5px;" class="dei" href="chat2.html"><img src="izbran.svg"> Сохраненное</a>
+    <a style="margin-bottom: 3px;" class="dei" href="redact.html"><img src="setting.svg"> Настройки</a>
+    <a style="margin-bottom: 2.5px; border-radius: 0 0 15px 15px ;" class="dei" href="chat1.html"><img src="help.svg"> Помощь</a>
+  </center>
+  <br>
+  <script>
+    const username = localStorage.getItem('usernameTOP');
+
+    if (username) {
+        document.querySelector('h1').textContent = username;
+    }
+
+    if (username) {
+        document.querySelector('p').textContent = "@" + username;
+    }
+  </script>
+
+  <br><br><br>
+
+  <footer>
+    <a href="main.html"><img src="home.svg" alt="дом"></a>
+    <a href="video.html"><img src="video.svg" alt="дом"></a>
+    <a href="chat.html"><img src="chat.svg" alt="дом"></a>
+    <a href="profile.html"><img src="user.svg" alt="дом"></a>
+  </footer>
+
+
+</body>
+</html>
