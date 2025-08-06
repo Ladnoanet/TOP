@@ -294,89 +294,25 @@
     <div class="buttons">
     </div>
   </header>
-
-  <h2 style="font-family: 'font'; font-weight: 500; margin: 15px; margin-bottom: 5px;">Юзернейм:</h2>
-  <center><input class="name" id="username" type="text" placeholder="Ваше новое имя..."></center>
-  <br>
-  <h2 style="font-family: 'font'; font-weight: 500; margin: 15px; margin-bottom: 5px;">Имя пользователя:</h2>
-  <center><div class="uss"><span id="userneme" style="color: #A1A1AA;">@username</span><i style="font-size: 10px; color: #00FF95;" class="fas fa-check"></i></div></center>
-  <div class="q">
-    <a id="registerBtn" href="">Применить</a>
-    <a style="background-color: #27272a;" href="profile.html">Отменить</a>
-  </div>
   <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const username = localStorage.getItem('usernameTOP');
-    const aaa = document.getElementById("userneme");
+    const idtt = localStorage.getItem('idTOP');
+    const aaa = document.getElementById("idt");
 
-    if (username && aaa) {
-      aaa.textContent = "@" + username;
+    if (idtt && aaa) {
+      aaa.textContent = idtt;
     }
   });
 
-  document.getElementById('registerBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value.trim();
-            if (username) {
-                localStorage.setItem('usernameTOP', username);
-                window.location.href = 'profile.html';
-            } else {
-                alert('Думаешь самый умный?');
-            }
-        });
 </script>
-<p style="font-family: 'font'; font-weight: 500; margin: 15px; margin-top: 20px; margin-bottom: 10px; color: #A1A1AA;">Дополнительно</p>
+<p style="font-family: 'font'; font-weight: 500; margin: 15px; margin-top: 10px; margin-bottom: 10px; color: #A1A1AA;">Личная информация</p>
 
 <div class="dopa">
     <div style="width: 75%;" class="text">
-        <p style="font-size: 18px; margin-bottom: 5px;">Приватный Аккаунт</p>
-        <p>Другие пользователи не будут видить ваш аккаунт</p>
+        <p style="font-size: 18px; margin-bottom: 5px;">Личный TopID</p>
+        <p id="idt" style="color: #A1A1AA;">id00000</p>
     </div>
-    <label class="switch">
-    <input type="checkbox" checked>
-    <span class="slider"></span>
-    </label>
 </div>
-<a href="konfedi.html">
-<div class="dopa">
-    <div style="width: 75%;" class="text">
-        <p style="font-size: 18px; margin-bottom: 5px;">Конфидециальность</p>
-        <p>Кто может найти вас и связаться с вами</p>
-    </div>
-    <img style="rotate: 180deg;" src="back.svg" alt="назад">
-</div>    
-</a>
-<a id="removeBtn" href="#">
-<div style="background-color: rgb(95, 0, 0);" class="dopa">
-    <div style="width: 75%;" class="text">
-        <p style="font-size: 18px; margin-bottom: 5px;">Удалить аккаунт</p>
-        <p>Удалить навсегда все данные о вас</p>
-    </div>
-    <img style="rotate: 180deg;" src="back.svg" alt="назад">
-</div>    
-</a>
-<script>
-  function clearLikes() {
-      const keysToRemove = [];
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key.endsWith('-liked') || key.endsWith('-reposted')) {
-          keysToRemove.push(key);
-        }
-      }
-
-      keysToRemove.forEach(key => localStorage.removeItem(key));
-
-    }
-
-    document.getElementById('removeBtn').addEventListener('click', function() {
-            localStorage.removeItem('usernameTOP');
-            localStorage.removeItem('favoriteMessages');
-            localStorage.removeItem('idTOP');
-            clearLikes();
-            window.location.href = 'index.html';
-        });
-</script>
 
   <br><br><br><br>
 

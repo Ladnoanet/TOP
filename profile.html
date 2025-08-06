@@ -189,14 +189,16 @@
     <p style="font-size: 20px; color: #A1A1AA;">@username</p>
     <a class="redact" href="redact.html">Редактировать профиль</a>
 
-    <a style="border-radius: 15px 15px 0 0; margin-bottom: 2.5px;" class="dei" href="https://tally.so/r/wz5kEa?username="><img src="video.svg"> Создать пост</a>
-    <a style="margin-bottom: 2.5px;" class="dei" href="chat2.html"><img src="izbran.svg"> Сохраненное</a>
-    <a style="margin-bottom: 3px;" class="dei" href="redact.html"><img src="setting.svg"> Настройки</a>
-    <a style="margin-bottom: 2.5px; border-radius: 0 0 15px 15px ;" class="dei" href="chat1.html"><img src="help.svg"> Помощь</a>
+    <a style="border-radius: 15px; margin-bottom: 4px;" class="dei" href="https://tally.so/r/wz5kEa?username="><img src="video.svg"> Создать пост</a>
+    <a style="margin-bottom: 4px; border-radius: 15px;" class="dei" href="chat2.html"><img src="izbran.svg"> Сохраненное</a>
+    <a style="margin-bottom: 4px; border-radius: 15px;" class="dei" href="redact.html"><img src="setting.svg"> Настройки</a>
+    <a style="margin-bottom: 4px; border-radius: 15px; text-align: left;" class="dei" href="lichinfo.html"><img src="info.svg"> Личная информация</a>
+    <a style="border-radius: 15px;" class="dei" href="chat1.html"><img src="help.svg"> Помощь</a>
   </center>
   <br>
   <script>
   const username = localStorage.getItem('usernameTOP');
+  const topid = localStorage.getItem('idTOP');
 
   if (username) {
       document.querySelector('h1').textContent = username;
@@ -204,7 +206,7 @@
 
       const postLink = document.querySelector('a[href^="https://tally.so/r/wz5kEa"]');
       if (postLink) {
-          postLink.href = `https://tally.so/r/wz5kEa?username=${encodeURIComponent(username)}`;
+          postLink.href = `https://tally.so/r/wz5kEa?username=${encodeURIComponent(username)}&topid=${encodeURIComponent(topid)}`;
       }
   }
 </script>
