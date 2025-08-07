@@ -182,7 +182,7 @@
             right: 0;
             top: 57px;
             width: 60px;
-            height: 47px;
+            height: 45px;
             display: flex;
             z-index: 1000;
             background: linear-gradient(to right, #0000, #141417 95%);
@@ -194,9 +194,20 @@
   <header>
     <img src="chati.png" alt="ЛОГОТОП">
     <div class="buttons">
-      <a href="poisk.html"><img src="poisk.svg" alt="поиск"></a>
-      <a href="notification.html"><img src="notification.svg" alt="уведомы"></a>
+      <a href="https://tally.so/r/wz5kEa"><i style="font-size: 20px;" class="fas fa-plus"></i></a>
     </div>
+    <script>
+      const username = localStorage.getItem('usernameTOP');
+      const topid = localStorage.getItem('idTOP');
+
+      if (username) {
+          const postLink = document.querySelector('a[href^="https://tally.so/r/wz5kEa"]');
+          if (postLink) {
+              postLink.href = `https://tally.so/r/wz5kEa?username=${encodeURIComponent(username)}&topid=${encodeURIComponent(topid)}`;
+          }
+      }
+    </script>
+
   </header>
 
   <div class="sort">
@@ -205,7 +216,7 @@
     <a style="background-color: white; color: #323236" href="channels.html">Каналы</a>
   </div>
 
-  <center><img style="filter: none; width: 80%; margin-top: -20px;" src="channels.png" alt="Каналы"><h1 style="font-weight: 100; font-family: 'font'; margin-top: -20px; margin-bottom: 30px;">Каналы</h1></center>
+  <center><img style="filter: none; width: 80%; margin-top: -20px;" src="channels.png" alt="Каналы"><h1 style="font-weight: 100; font-family: 'font'; margin-top: -40px; margin-bottom: 30px;">Каналы</h1></center>
 
   <!--<h2 style="width: 90%; margin: auto; font-family: 'font'; font-weight: 500; font-size: 25px; margin-bottom: 10px; margin-top: 10px;">Каналы:</h2>-->
   <div class="animate__animated animate__fadeInUp">
@@ -232,6 +243,4 @@
   </footer>
 
 </body>
-
 </html>
-
