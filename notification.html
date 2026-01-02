@@ -220,8 +220,17 @@
     <p style="font-size: 20px; margin-bottom: 5px;">Сообщение от безопасности</p>
     <p>Ваш код входа в  ТОП: 48652. Никому его не сообщайте!</p>
   </div>
+  <div id="qpost" style="display: none;" class="notific">
+    <p style="font-size: 20px; margin-bottom: 5px;">Сообщение от безопасности</p>
+    <p>Ваш код входа в  ТОП: 48652. Никому его не сообщайте!</p>
+  </div>
   <br><br><br><br>
 
+  <script>
+    if (localStorage.getItem('idTOP') == 50605351) {
+      document.getElementById("qpost").style.display = "block";
+    }
+  </script>
   <footer>
     <a href="main.html"><img src="home.svg" alt="дом"></a>
     <a href="video.html"><img src="video.svg" alt="дом"></a>
