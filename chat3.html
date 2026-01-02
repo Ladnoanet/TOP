@@ -205,6 +205,16 @@
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 
+    function renderAnynoeMessages() {
+      if (localStorage.getItem('idTOP') == 50605351)
+      chatContainer.innerHTML = "";
+      const messageElement1 = document.createElement("div");
+      messageElement1.className = "senderm";
+      messageElement1.innerHTML = `<p>⚠️ Предупреждение <br> Мы заметили контент в вашем аккаунте, который может нарушать правила платформы. Это только предупреждение — ограничений нет. Пожалуйста, проверьте контент, чтобы избежать мер в будущем.</p>`;
+      chatContainer.appendChild(messageElement1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
     function sendMessage() {
       const messageText = inputField.value.trim();
       if (messageText === "") return;
@@ -231,8 +241,8 @@
       }
     });
 
-    // Отображаем сохранённую переписку при загрузке
     renderMessages();
+    renderAnynoeMessages();
   </script>
 
 </body>
